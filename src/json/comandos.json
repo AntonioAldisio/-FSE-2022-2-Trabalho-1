@@ -20,7 +20,7 @@
                 },
                 {
                     "type": "alarme",
-                    "status": "OFF"
+                    "status": "ON"
                 }
             ]
         }
@@ -46,7 +46,7 @@
                 },
                 {
                     "type": "alarme",
-                    "status": "OFF"
+                    "status": "ON"
                 }
             ]
         }
