@@ -9,18 +9,14 @@ def sensor_on_of(pino):
     sensor = 0
     try:
         sensor = RPi.GPIO.input(pino)
-        if(sensor):
-            print("ON")
+        if (sensor):
+            # print("ON")
             return 'ON'
         else:
-            print ("OFF")
+            # print ("OFF")
             return 'OFF'
     except KeyboardInterrupt:
         pass
     finally:
-        print ('Fim')
+        # print ('Fim')
         RPi.GPIO.cleanup()
-
-while(True):
-    x = input()
-    sensor_on_of(x)

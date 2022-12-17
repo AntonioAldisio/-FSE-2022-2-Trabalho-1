@@ -3,17 +3,18 @@ from utils.save_json import save_json
 import logging
 
 
-def put_command(sala:str, nivel:int, chave:str):
+def put_command(sala: str, nivel: int, chave: str):
     data = parse_json('src/json/comandos.json')
     data[sala][0]['outputs'][nivel]['status'] = chave
     save_json('src/json/comandos.json', data)
 
-def get_command(sala:str, nivel:int):
+
+def get_command(sala: str, nivel: int):
     data = parse_json('src/json/comandos.json')
     return data[sala][0]['outputs'][nivel]['status']
 
 
-def swap_command (escolha_input:int, sala:str):
+def swap_command(escolha_input: int, sala: str):
     if (escolha_input == 1):
         if (get_command(sala, 0) == "ON"):
             put_command(sala, 0, 'OFF')

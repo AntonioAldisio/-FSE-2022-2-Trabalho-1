@@ -1,31 +1,32 @@
-import socket
-import sys
+# #!/usr/bin/env python3
+import socketserver, subprocess, sys
+from threading import Thread
+from pprint import pprint
+import json
+
+
+class SingleTCPHandler(socketserver.BaseRequestHandler):
+    def handle(self):
+        # self.request is the client connection
+        data = self.request.recv(8192)  # clip input at 1Kb
+        self.request.send(bytes(json.dumps({"status": "success!"}), 'UTF-8'))
+        self.request.close()
+
+
+class SimpleServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
+    # Ctrl-C will cleanly kill all spawned threads
+    daemon_threads = True
+    # much faster rebinding
+    allow_reuse_address = True
+
+    def __init__(self, server_address, RequestHandlerClass):
+        socketserver.TCPServer.__init__(self, server_address, RequestHandlerClass)
+
 
 def initSocket(ip, port):
-    # Set up a TCP/IP server
-    tcp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-    # Bind the socket to server address and port 81
-    server_address = (ip, port)
-    tcp_socket.bind(server_address)
-
-    # Listen on port 81
-    tcp_socket.listen(1)
-
-    while True:
-        print("Waiting for connection")
-        connection, client = tcp_socket.accept()
-
-        try:
-            print("Connected to client IP: {}".format(client))
-
-            while True:
-                data = connection.recv(32)
-                print("Received data: {}".format(data))
-                tcp_socket.send('src/json/comandos.json')
-
-                if not data:
-                    break
-
-        finally:
-            connection.close()
+    server = SimpleServer((ip, port), SingleTCPHandler)
+    # terminate with Ctrl-C
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        sys.exit(0)

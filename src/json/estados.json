@@ -4,7 +4,7 @@
             "outputs": [
                 {
                     "type": "lampada 01",
-                    "status": "OFF"
+                    "status": "ON"
                 },
                 {
                     "type": "lampada 02",
@@ -20,25 +20,25 @@
                 },
                 {
                     "type": "alarme",
-                    "status": "ON"
+                    "status": "OFF"
                 }
             ],
             "inputs": [
                 {
                     "type": "sensor de presenca",
-                    "status": 0
+                    "status": "OFF"
                 },
                 {
                     "type": "sensor de fumaca",
-                    "status": 0
+                    "status": "OFF"
                 },
                 {
                     "type": "janela",
-                    "status": "fechada"
+                    "status": "OFF"
                 },
                 {
                     "type": "porta",
-                    "status": "fechada"
+                    "status": "OFF"
                 },
                 {
                     "type": "contagem de pessoas - Entrada",
@@ -87,12 +87,12 @@
             ],
             "inputs": [
                 {
-                    "type": "sensor de presen\u00e7a",
-                    "status": 0
+                    "type": "sensor de presenca",
+                    "status": "OFF"
                 },
                 {
-                    "type": "sensor de fuma\u00e7a",
-                    "status": 0
+                    "type": "sensor de fumaca",
+                    "status": "OFF"
                 },
                 {
                     "type": "janela",

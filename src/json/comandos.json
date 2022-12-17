@@ -16,7 +16,7 @@
                 },
                 {
                     "type": "ar-condicionado",
-                    "status": "ON"
+                    "status": "OFF"
                 },
                 {
                     "type": "alarme",
