@@ -8,9 +8,9 @@ from config.config_status_json import config_json
 
 def servidor_distribuido(dir_sala: str):
     sala = open_json(dir_sala)
-    if(dir_sala == 'src/json/sala_1.json'):
+    if(dir_sala in 'sala_1.json'):
         distribuido = 'sala01'
-    if(dir_sala == 'src/json/sala_2.json'):
+    if(dir_sala in 'sala_2.json'):
         distribuido = 'sala02'
 
 
