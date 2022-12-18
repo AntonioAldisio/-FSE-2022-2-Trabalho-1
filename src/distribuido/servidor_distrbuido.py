@@ -13,7 +13,7 @@ def servidor_distribuido(dir_sala: str):
     if(dir_sala in 'sala_2.json'):
         distribuido = 'sala02'
 
-
+    print('distribuido {}'. format(distribuido))
     config_json(dir_sala, 'estados')
 
     ip_servidor_sala = sala['ip_servidor_distribuido']
