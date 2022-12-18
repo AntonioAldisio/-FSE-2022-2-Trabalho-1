@@ -2,20 +2,29 @@ from distribuido.controle import controle
 from servidor.servidor import initSocket
 import threading
 from utils.open_json import open_json
-import os
+from config.config_status_json import config_json
 
 
-def servidor_distribuido(dir_sala01: str):
-    sala_01 = open_json(dir_sala01)
 
-    ip_servidor_salas = sala_01['ip_servidor_distribuido']
-    port_servidor_salas = sala_01['porta_servidor_distribuido']
+def servidor_distribuido(dir_sala: str):
+    sala = open_json(dir_sala)
+    if(dir_sala == 'src/json/sala_1.json'):
+        sala = 'sala01'
+    if(dir_sala == 'src/json/sala_2.json'):
+        sala = 'sala02'
+
+
+    config_json(sala, 'comandos')
+
+    ip_servidor_sala = sala['ip_servidor_distribuido']
+    port_servidor_sala = sala['porta_servidor_distribuido']
 
     servidor_distruido_thread = threading.Thread(target=initSocket,
-                                                 args=(ip_servidor_salas,
-                                                 int(port_servidor_salas)))
+                                                 args=(ip_servidor_sala,
+                                                 int(port_servidor_sala)))
     servidor_distruido_thread.start()
 
-    controle_thread = threading.Thread(target=controle)
+    controle_thread = threading.Thread(target=controle,
+                                       args=sala)
     controle_thread.start()
     controle_thread.join()
