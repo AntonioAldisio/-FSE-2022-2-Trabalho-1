@@ -4,7 +4,7 @@ from utils.open_json import open_json
 from utils.save_json import save_json
 from sensores.sensor_on_off import sensor_on_of
 from sensores.sensor_DH22 import temperatura
-from comandos import comandos
+from .comandos import comandos
 
 
 def controle(sala: str):
