@@ -9,9 +9,9 @@ from config.config_status_json import config_json
 def servidor_distribuido(dir_sala: str):
     sala = open_json(dir_sala)
     if(dir_sala == 'src/json/sala_1.json'):
-        sala = 'sala01'
+        distribuido = 'sala01'
     if(dir_sala == 'src/json/sala_2.json'):
-        sala = 'sala02'
+        distribuido = 'sala02'
 
 
     config_json(sala, 'comandos')
@@ -25,6 +25,6 @@ def servidor_distribuido(dir_sala: str):
     servidor_distruido_thread.start()
 
     controle_thread = threading.Thread(target=controle,
-                                       args=sala)
+                                       args=distribuido)
     controle_thread.start()
     controle_thread.join()
