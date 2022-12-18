@@ -47,6 +47,7 @@ def controle(sala: str):
                 count += 1
 
         save_json('src/json/estados.json', status)
-        send_status_to_central()
+        send_status_to_central(status['ip_servidor_central'],
+                               status['porta_servidor_central'])
 
         time.sleep(10)
