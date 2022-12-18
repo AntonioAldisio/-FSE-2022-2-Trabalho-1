@@ -67,7 +67,7 @@
                     "gpio": 2
                 }
             ],
-            "sensor_temperatura_umildade": [
+            "sensor_temperatura_umidade": [
                 {
                     "type": "temperatura",
                     "status": 0,
@@ -142,7 +142,7 @@
                     "gpio": 2
                 }
             ],
-            "sensor_temperatura_umildade": [
+            "sensor_temperatura_umidade": [
                 {
                     "type": "temperatura",
                     "status": 0,

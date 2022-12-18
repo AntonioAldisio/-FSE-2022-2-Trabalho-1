@@ -2,12 +2,11 @@ from utils.open_json import open_json
 from utils.save_json import save_json
 
 
-def config_json(data_config: dict, json_file: str):
-    dir = 'src/json/' + json_file + '.json'
-    data = open_json(dir)
+def config_json(data_config: dict):
+    data = open_json('src/json/comandos.json')
 
-    data['ip_servidor_central'] = data_config['ip_servidor_central']
-    data['porta_servidor_central'] = data_config['porta_servidor_central']
+    data['ip_servidor_central'] = str(data_config['ip_servidor_central'])
+    data['porta_servidor_central'] = int(data_config['porta_servidor_central'])
 
     if (data_config['nome'] == 'Sala 01'):
         data['ip_sala_01'] = data_config['ip_servidor_distribuido']

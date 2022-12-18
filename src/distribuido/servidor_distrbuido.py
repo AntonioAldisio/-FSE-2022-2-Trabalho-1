@@ -14,7 +14,7 @@ def servidor_distribuido(dir_sala: str):
         distribuido = 'sala02'
 
 
-    config_json(sala, 'comandos')
+    config_json(sala)
 
     ip_servidor_sala = sala['ip_servidor_distribuido']
     port_servidor_sala = sala['porta_servidor_distribuido']
