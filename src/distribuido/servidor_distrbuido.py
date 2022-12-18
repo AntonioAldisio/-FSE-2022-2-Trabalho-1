@@ -24,7 +24,6 @@ def servidor_distribuido(dir_sala: str):
                                                  int(port_servidor_sala)))
     servidor_distruido_thread.start()
 
-    controle_thread = threading.Thread(target=controle,
-                                       args=distribuido)
+    controle_thread = threading.Thread(target=controle, args=(distribuido,))
     controle_thread.start()
     controle_thread.join()
