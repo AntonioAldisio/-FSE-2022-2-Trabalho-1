@@ -9,8 +9,8 @@ def servidor_central(dir01: str, dir02: str):
     configuracao_servidor_01 = open_json(dir01)
     configuracao_servidor_02 = open_json(dir02)
 
-    config_json(configuracao_servidor_01, 'estados')
-    config_json(configuracao_servidor_02, 'estados')
+    config_json(configuracao_servidor_01)
+    config_json(configuracao_servidor_02)
 
     ip_servidor_central = configuracao_servidor_01['ip_servidor_central']
     port_servidor_central = str(configuracao_servidor_01['porta_servidor_central'])
