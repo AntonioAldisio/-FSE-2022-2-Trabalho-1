@@ -13,8 +13,8 @@ def controle(sala: str):
     while True:
         if(sala == 'sala01'):
             temp_sala01, umid_sala01 = temperatura('01')
-            status['sala01'][0]['sensor_temperatura_umildade'][0]['status'] = temp_sala01
-            status['sala01'][0]['sensor_temperatura_umildade'][1]['status'] = umid_sala01
+            status['sala01'][0]['sensor_temperatura_umidade'][0]['status'] = temp_sala01
+            status['sala01'][0]['sensor_temperatura_umidade'][1]['status'] = umid_sala01
 
             # inputs
             count = 0
@@ -31,8 +31,8 @@ def controle(sala: str):
 
         if(sala == 'sala02'):
             temp_sala01, umid_sala01 = temperatura('02')
-            status['sala02'][0]['sensor_temperatura_umildade'][0]['status'] = temp_sala01
-            status['sala02'][0]['sensor_temperatura_umildade'][1]['status'] = umid_sala01
+            status['sala02'][0]['sensor_temperatura_umidade'][0]['status'] = temp_sala01
+            status['sala02'][0]['sensor_temperatura_umidade'][1]['status'] = umid_sala01
 
             # inputs
             count = 0
