@@ -17,7 +17,7 @@ def print_status_sala_01():
     print('---------------------- \n')
     i = 0
     while(i < 2):
-        print(data['sala01'][0]['sensor_temperatura_umildade'][i]['type'] + ': ' + str(data['sala01'][0]['sensor_temperatura_umildade'][i]['status']))
+        print(data['sala01'][0]['sensor_temperatura_umidade'][i]['type'] + ': ' + str(data['sala01'][0]['sensor_temperatura_umidade'][i]['status']))
         i += 1
     print('---------------------- \n')
 
@@ -38,7 +38,7 @@ def print_status_sala_02():
     print('---------------------- \n')
     i = 0
     while(i < 2):
-        print(data['sala02'][0]['sensor_temperatura_umildade'][i]['type'] + ': ' + str(data['sala02'][0]['sensor_temperatura_umildade'][i]['status']))
+        print(data['sala02'][0]['sensor_temperatura_umidade'][i]['type'] + ': ' + str(data['sala02'][0]['sensor_temperatura_umidade'][i]['status']))
         i += 1
     print('---------------------- \n')
 
