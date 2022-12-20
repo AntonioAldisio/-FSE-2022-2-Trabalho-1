@@ -4,10 +4,10 @@ import adafruit_dht
 
 def temperatura(sala: str):
     if (sala == '01'):
-        dhtDevice = adafruit_dht.DHT22(board.D4)
+        dhtDevice = adafruit_dht.DHT22(board.D18)
 
     elif (sala == '02'):
-        dhtDevice = adafruit_dht.DHT22(board.D18)
+        dhtDevice = adafruit_dht.DHT22(board.D4)
 
     temperature_c = dhtDevice.temperature
     humidity = dhtDevice.humidity

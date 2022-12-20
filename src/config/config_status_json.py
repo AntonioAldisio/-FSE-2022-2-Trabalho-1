@@ -29,7 +29,6 @@ def config_json(dir_config: str, nome_arquivo: str):
         data['sala01'][0]['sensor_temperatura_umidade'][1]['gpio'] = data_config['sensor_temperatura'][0]['gpio']
 
     if (data_config['nome'] == 'Sala 02'):
-        print('Estou na sala 02')
         data['ip_sala_02'] = data_config['ip_servidor_distribuido']
         data['porta_sala_02'] = data_config['porta_servidor_distribuido']
 
