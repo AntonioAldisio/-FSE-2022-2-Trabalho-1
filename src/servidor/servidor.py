@@ -1,32 +1,17 @@
 # #!/usr/bin/env python3
-import socketserver, subprocess, sys
-from threading import Thread
-from pprint import pprint
-import json
-
-
-class SingleTCPHandler(socketserver.BaseRequestHandler):
-    def handle(self):
-        # self.request is the client connection
-        data = self.request.recv(8192)  # clip input at 1Kb
-        self.request.send(bytes(json.dumps({"status": "success!"}), 'UTF-8'))
-        self.request.close()
-
-
-class SimpleServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
-    # Ctrl-C will cleanly kill all spawned threads
-    daemon_threads = True
-    # much faster rebinding
-    allow_reuse_address = True
-
-    def __init__(self, server_address, RequestHandlerClass):
-        socketserver.TCPServer.__init__(self, server_address, RequestHandlerClass)
+import socket
 
 
 def initSocket(ip, port):
-    server = SimpleServer((ip, port), SingleTCPHandler)
-    # terminate with Ctrl-C
-    try:
-        server.serve_forever()
-    except KeyboardInterrupt:
-        sys.exit(0)
+    tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    orig = (ip, port)
+    tcp.bind(orig)
+    tcp.listen(5)
+    while True:
+        con, cliente = tcp.accept()
+        print ('Concetado por {}'.format(cliente))
+        while True:
+            msg = con.recv(8192)
+            if not msg: break
+        print ('Finalizando conexao do cliente {}'.format(cliente))
+        con.close()
