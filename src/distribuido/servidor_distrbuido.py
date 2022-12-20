@@ -21,7 +21,8 @@ def servidor_distribuido(dir_sala: str):
 
     servidor_distruido_thread = threading.Thread(target=initSocket,
                                                  args=(ip_servidor_sala,
-                                                 int(port_servidor_sala)))
+                                                 int(port_servidor_sala),
+                                                 'comandos'))
     servidor_distruido_thread.start()
 
     controle_thread = threading.Thread(target=controle, args=(distribuido,))

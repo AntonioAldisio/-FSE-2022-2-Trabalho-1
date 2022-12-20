@@ -17,7 +17,8 @@ def servidor_central(dir01: str, dir02: str):
 
     servidor_central_thread = threading.Thread(target=initSocket,
                                                args=(ip_servidor_central,
-                                                     port_servidor_central))
+                                                     port_servidor_central,
+                                                     'estados'))
     servidor_central_thread.start()
 
     interface_thread = threading.Thread(target=menu)
