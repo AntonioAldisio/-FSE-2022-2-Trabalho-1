@@ -19,8 +19,8 @@ def comandos(escolha):
         print('Alarme Ligado')
         put_command('sala01', 4, 'ON')
         put_command('sala02', 4, 'ON')
-        send_comandos(data['ip_sala_01'],
-                      data['porta_sala_01'])
+        # send_comandos(data['ip_sala_01'],
+        #               data['porta_sala_01'])
         send_comandos(data['ip_sala_02'],
                       data['porta_sala_02'])
         return 'Alarme Ligado'
@@ -29,8 +29,8 @@ def comandos(escolha):
         print('Alarme Desligado')
         put_command('sala01', 4, 'OFF')
         put_command('sala02', 4, 'OFF')
-        send_comandos(data['ip_sala_01'],
-                      data['porta_sala_01'])
+        # send_comandos(data['ip_sala_01'],
+        #               data['porta_sala_01'])
         send_comandos(data['ip_sala_02'],
                       data['porta_sala_02'])
         return 'Alarme Desligado'
