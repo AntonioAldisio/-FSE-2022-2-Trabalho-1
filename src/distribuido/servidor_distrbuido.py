@@ -10,7 +10,7 @@ def servidor_distribuido(dir_sala: str):
     sala = open_json(dir_sala)
     if (dir_sala == '01'):
         distribuido = 'sala01'
-    else:
+    if (dir_sala == '02'):
         distribuido = 'sala02'
 
     print('distribuido {}'. format(distribuido))

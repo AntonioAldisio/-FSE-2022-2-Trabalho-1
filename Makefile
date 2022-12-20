@@ -1,5 +1,5 @@
 central:
 	python3 src/app_servidor_central.py
 
-destribuido:
+distribuido:
 	python3 src/app_servidor_distribuido.py
