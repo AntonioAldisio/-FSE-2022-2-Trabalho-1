@@ -1,22 +1,20 @@
-import board
-import adafruit_dht
+import Adafruit_DHT
 
 
 def temperatura(sala: str):
     try:
         if (sala == '01'):
-            print('sala 01')
-            dhtDevice = adafruit_dht.DHT22(board.D4)
+            humidity, temperature = Adafruit_DHT.read_retry(Adafruit_DHT.DHT22, 4)
 
         if (sala == '02'):
-            print('sala 02')
-            dhtDevice = adafruit_dht.DHT22(board.D18)
+            humidity, temperature = Adafruit_DHT.read_retry(Adafruit_DHT.DHT22, 18)
 
-        temperature_c = dhtDevice.temperature
-        humidity = dhtDevice.humidity
-        return temperature_c, humidity
-    except Exception as e:
-        print('Erro no sensor {}'.format(e))
+        return round(temperature,2), round(humidity,2)
+    except RuntimeError as error:
+        print(error.args[0])
+    except Exception as error:
+        raise error
+    
     # while True:
     #     try:
     #         # Print the values to the serial port

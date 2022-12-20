@@ -1,10 +1,10 @@
 {
-    "ip_servidor_central": "0.0.0.0",
-    "porta_servidor_central": 10981,
+    "ip_servidor_central": "192.168.1.146",
+    "porta_servidor_central": 10993,
     "ip_sala_01": "192.168.1.132",
-    "porta_sala_01": 10982,
-    "ip_sala_02": "192.168.1.129",
-    "porta_sala_02": 10983,
+    "porta_sala_01": 10989,
+    "ip_sala_02": "192.168.1.146",
+    "porta_sala_02": 10981,
     "sala01": [
         {
             "outputs": [
@@ -85,7 +85,7 @@
             "outputs": [
                 {
                     "type": "lampada 01",
-                    "status": "OFF",
+                    "status": "ON",
                     "gpio": 26
                 },
                 {

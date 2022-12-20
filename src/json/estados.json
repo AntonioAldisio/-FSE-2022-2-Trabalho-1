@@ -1,10 +1,10 @@
 {
-    "ip_servidor_central": "192.168.0.53",
-    "porta_servidor_central": 10000,
+    "ip_servidor_central": "192.168.1.146",
+    "porta_servidor_central": 10993,
     "ip_sala_01": "192.168.1.3",
     "porta_sala_01": 10982,
-    "ip_sala_02": "192.168.0.52",
-    "porta_sala_02": 10200,
+    "ip_sala_02": "192.168.1.146",
+    "porta_sala_02": 10981,
     "sala01": [
         {
             "outputs": [
@@ -85,7 +85,7 @@
             "outputs": [
                 {
                     "type": "lampada 01",
-                    "status": "OFF",
+                    "status": "ON",
                     "gpio": 26
                 },
                 {
@@ -105,7 +105,7 @@
                 },
                 {
                     "type": "alarme",
-                    "status": "ON",
+                    "status": "OFF",
                     "gpio": 5
                 }
             ],
@@ -122,34 +122,34 @@
                 },
                 {
                     "type": "janela",
-                    "status": "fechada",
+                    "status": "OFF",
                     "gpio": 9
                 },
                 {
                     "type": "porta",
-                    "status": "fechada",
+                    "status": "OFF",
                     "gpio": 10
                 },
                 {
                     "type": "contagem de pessoas - Entrada",
-                    "status": 0,
+                    "status": "OFF",
                     "gpio": 22
                 },
                 {
                     "type": "contagem de pessoas - Sa\u00edda",
-                    "status": 0,
+                    "status": "OFF",
                     "gpio": 27
                 }
             ],
             "sensor_temperatura_umidade": [
                 {
                     "type": "temperatura",
-                    "status": 0,
+                    "status": 21.7,
                     "gpio": 18
                 },
                 {
                     "type": "umidade",
-                    "status": 0,
+                    "status": 80.5,
                     "gpio": 18
                 }
             ]
