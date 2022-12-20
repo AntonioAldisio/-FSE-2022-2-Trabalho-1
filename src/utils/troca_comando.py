@@ -46,3 +46,13 @@ def swap_command(escolha_input: int, sala: str):
         else:
             put_command(sala, 3, 'ON')
             logging.info('Ar-condicionado Ligado')
+
+    if (escolha_input == 5):
+        put_command(sala, 0, 'OFF')
+        logging.info('Lamapada 01 Desligada')
+        put_command(sala, 1, 'OFF')
+        logging.info('Lamapada 02 Desligada')
+        put_command(sala, 2, 'OFF')
+        logging.info('Projetor Desligado')
+        put_command(sala, 3, 'OFF')
+        logging.info('Ar-condicionado Desligado')

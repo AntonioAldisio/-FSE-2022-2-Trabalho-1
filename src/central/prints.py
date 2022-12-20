@@ -6,7 +6,7 @@ def print_status_sala_01():
     print('Informações da sala 01 \n')
     print('---------------------- \n')
     i = 0
-    while (i < 4):
+    while (i < 5):
         print(data['sala01'][0]['outputs'][i]['type'] + ': ' + data['sala01'][0]['outputs'][i]['status'])
         i += 1
     print('---------------------- \n\n')
@@ -27,7 +27,7 @@ def print_status_sala_02():
     print('Informações da sala 02 \n')
     print('---------------------- \n')
     i = 0
-    while(i < 4):
+    while(i < 5):
         print(data['sala02'][0]['outputs'][i]['type'] + ': ' + data['sala02'][0]['outputs'][i]['status'])
         i += 1
     print('---------------------- \n\n')
@@ -58,3 +58,4 @@ def print_inputs():
     print('2 - lampada 02')
     print('3 - projetor')
     print('4 - ar-condicionado')
+    print('5 - Todos os equipamentos da sala')
