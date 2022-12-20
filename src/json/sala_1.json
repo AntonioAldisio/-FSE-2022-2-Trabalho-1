@@ -1,8 +1,8 @@
 {
-    "ip_servidor_central": "192.168.1.129",
-    "porta_servidor_central": 10981,
+    "ip_servidor_central": "192.168.1.132",
+    "porta_servidor_central": 10987,
     "ip_servidor_distribuido": "192.168.1.132",
-    "porta_servidor_distribuido": 10982,
+    "porta_servidor_distribuido": 10989,
     "nome": "Sala 01",
     "outputs": [
         {
