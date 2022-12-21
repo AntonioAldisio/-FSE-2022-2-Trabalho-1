@@ -9,7 +9,7 @@ def comandos(sala: str):
         if (sala == 'sala01'):
                 count = 0
                 while (count < 5):
-                        atuador(pin=comandos['sala01'][0]['outputs'][count]['gpio'],
+                        atuador(pino=comandos['sala01'][0]['outputs'][count]['gpio'],
                                 status=comandos['sala01'][0]['outputs'][count]['status'])
                         count += 1
         if (sala == 'sala02'):

@@ -8,12 +8,14 @@ def initSocket(ip, port, diretorio):
     try:
         tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         tcp.bind((ip, port))
-        tcp.listen(2)
+        tcp.listen(3)
         while True:
             con, cliente = tcp.accept()
             print ('Concetado por', cliente)
             while True:
-                received = json.loads(tcp.recv(8192).decode("utf-8"))
-                save_json(dir)
+                msg = con.recv(8192).decode("utf-8")
+                dicionario = json.loads(msg)
+                if not msg: break
+            save_json(dir, dicionario)
     except KeyboardInterrupt:
         sys.exit(0)

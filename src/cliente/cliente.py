@@ -14,7 +14,5 @@ def client(ip:str, port:int, dir:str):
     client.connect((ip, port))
     #  send some data
     client.sendall(bytes(json.dumps(data), 'UTF-8'))
-
     #  receive data from the server
-    response = client.recv(8192)
-    print("Received: {}".format(response.decode('utf-8')))
+    client.close()
